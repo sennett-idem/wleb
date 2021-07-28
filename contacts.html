@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Contacts</title>
+
+<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.18/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Western Lake Erie Basin Domestic Action Plan</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Sections
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="index.html">Background</a>
+    </li>
+    <li>
+      <a href="annex_4_dap.html">Annex 4 DAP</a>
+    </li>
+    <li>
+      <a href="water_quality_monitoring.html">Monitoring</a>
+    </li>
+    <li>
+      <a href="programs_and_projects.html">Programs and Projects</a>
+    </li>
+    <li>
+      <a href="accomplishments.html">Accomplishments</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="upcoming_events.html">
+    <span class="fa fa-calendar"></span>
+     
+    Upcoming Events
+  </a>
+</li>
+<li>
+  <a href="https://www.in.gov/isda/files/Lake-Erie-Domestic-Action-Plan-Final.pdf">
+    <span class="fa fa-file-alt"></span>
+     
+    Domestic Action Plan
+  </a>
+</li>
+<li>
+  <a href="https://www.in.gov/isda/divisions/soil-conservation/western-lake-erie-basin/">
+    <span class="fa fa-seedling"></span>
+     
+    ISDA - WLEB Website
+  </a>
+</li>
+<li>
+  <a href="contacts.html">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contacts
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Contacts</h1>
+
+</div>
+
+
+<div id="isda-contacts" class="section level2">
+<h2>ISDA Contacts</h2>
+<div id="resource-specialist" class="section level3">
+<h3>Resource Specialist</h3>
+<p>The ISDA, Division of Soil Conservation (DSC) employs Resource Specialists (RSs) throughout the state of Indiana to assist landowners and stakeholders in the watershed to provide agronomic technical assistance focused on soil health and water quality, develop conservation plans, and design and implement conservation BMPs through the local, state and federal conservation programs available. The RSs also serve and support the SWCDs by assisting with conservation activities and outreach mailings, helping to carry out conservation programs, reporting accomplishments, planning and assisting with field days/workshops, and educating landowners, school-age children and the public on the importance of conservation and soil health. There are four Resource Specialist Team Leaders that are responsible for overseeing the responsibilities and daily duties of the DSC Resource Specialists located in their respective areas, in addition to performing the regular duties of an RS as explained above.</p>
+<ul>
+<li><p>Kate Sanders, Dekalb and Steuben Counties, 260-484-5848 ext. 3, <a href="mailto:kasanders1@isda.in.gov" class="email">kasanders1@isda.in.gov</a></p></li>
+<li><p>Lindsey Bluhm, Adams and Allen Counties, 260-724-4124 ext. 3, <a href="mailto:lbluhm@isda.in.gov" class="email">lbluhm@isda.in.gov</a></p></li>
+<li><p>Dave Lefforge, Wells, Huntington, Wabash, and Miami Counties, 260-824-1930 ext. 3, <a href="mailto:dlefforge@isda.in.gov" class="email">dlefforge@isda.in.gov</a></p></li>
+</ul>
+<p>There are 10 Resource Specialists that also serve as CREP Leaders in the CREP watersheds that work with landowners on enrollment and implementation of CREP practices.</p>
+<ul>
+<li>Heath Hurst, Noble, LaGrange, Elkhart, and Whitely Counties, 260-636-7682 ext. 3, <a href="mailto:hhurts@isda.in.gov" class="email">hhurts@isda.in.gov</a></li>
+</ul>
+</div>
+<div id="district-support-specialist" class="section level3">
+<h3>District Support Specialist</h3>
+<p>The ISDA, Division of Soil Conservation employs District Support Specialists (DSSs) that work cooperatively throughout the state with Soil and Water Conservation Districts (SWCDs) and other conservations partners in the design of programs that reach landowners, the general public, and governmental officials on the husbandry and management of soil and water resources. They prepare and conduct training for SWCD supervisors and staff, assist SWCDs in expanding their capacity to fulfill their role in their communities, provide facilitation for strategic planning and similar sessions, and provide information, guidance and direct on-site assistance to SWCDs in carrying out their legal and operational responsibilities.</p>
+<ul>
+<li>Jennifer Thum, Northeast Indiana, 260-341-6966, <a href="mailto:jthum@isda.in.gov" class="email">jthum@isda.in.gov</a></li>
+</ul>
+</div>
+</div>
+<div id="wleb-dap-advisory-committee-members" class="section level2">
+<h2>WLEB DAP Advisory Committee Members</h2>
+<div id="htmlwidget-20846d14518fe0994f74" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-20846d14518fe0994f74">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25"],["Steuben County SWCD","Dekalb County SWCD","Allen County SWCD","Adams County SWCD","Save Maumee","Ft. Wayne City Utilities","Adams County Regional Sewer District","IUPUFW, St. Joseph Watershed Alliance, Maumee Watershed Alliance","Sierra Club","IDNR LARE Program","The Nature Conservancy","USGS","ISDA","IDEM","Maumee River Baisn Commission","Indiana Pork","Indiana Farm Bureau","Agribusiness Council of Indiana","NRCS","Allen County MS4","City of Auburn MS4","City of Fort Wayne (other divisions)","Indiana Agriculture Nutrient Alliance","Hoosier Environmental Council","Purdue University"],["Janel Meyer","Julie Knudson","Greg Lake","Sandra Voglewede","Abigail King","Anne Marie Smrchek","Barry Schere","Bob Gillespie","Celia Elder","Doug Nusbaum","Jessica D'Ambrosio","Jeff Frey","Julie Harrold","Sam Ennett","Rod Renkenberger","Josh Trenary","Jeff Cummins","Amy Cornell","Jill Reinhart",null,"Todd Sattison",null,null,"Indra Frank","Ron Turco"],["Janel.Meyer@in.nacdnet.net","jknudson@co.dekalb.in.us","gregalake@gmail.com","sandy.voglewede@in.nacdnet.net","abby@savemaumee.org","anne.marie.smrchek@cityoffortwayne.org","bscherer@co.adams.is.us","gillispi@pfw.edu","celia.elder24@gmail.com","DNusbaum@dnr.in.gov","jessica.dambrosio@TNC.ORG","jwfrey@usgs.gov","jharrold@isda.in.gov","sennett@idem.in.gov","RodR@mrbc.org","jtrenary@inpork.org","jcummins@infarmbureau.org","acornell@inagribiz.org","jill.reinhart@in.usda.gov",null,"TMSattison@ci.auburn.in.us",null,null,"IFrank@hecweb.org","rturco@purdue.edu"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Organization<\/th>\n      <th>Contact Name<\/th>\n      <th>Email<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+</div>
+
+<p style="text-align: center;">
+    <img src="west_lake_erie_basin.jpg" alt="WLEB Logo" style="width:150px;height:110px;" href="https://www.in.gov/isda/divisions/soil-conservation/western-lake-erie-basin/">
+</p>
+
+<p style="text-align: center;">Western Lake Erie Basin Domestic Action Plan Advisory Committee</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

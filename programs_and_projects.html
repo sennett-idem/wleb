@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>WLEB DAP Programs and Projects</title>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.18/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Western Lake Erie Basin Domestic Action Plan</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Sections
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="index.html">Background</a>
+    </li>
+    <li>
+      <a href="annex_4_dap.html">Annex 4 DAP</a>
+    </li>
+    <li>
+      <a href="water_quality_monitoring.html">Monitoring</a>
+    </li>
+    <li>
+      <a href="programs_and_projects.html">Programs and Projects</a>
+    </li>
+    <li>
+      <a href="accomplishments.html">Accomplishments</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="upcoming_events.html">
+    <span class="fa fa-calendar"></span>
+     
+    Upcoming Events
+  </a>
+</li>
+<li>
+  <a href="https://www.in.gov/isda/files/Lake-Erie-Domestic-Action-Plan-Final.pdf">
+    <span class="fa fa-file-alt"></span>
+     
+    Domestic Action Plan
+  </a>
+</li>
+<li>
+  <a href="https://www.in.gov/isda/divisions/soil-conservation/western-lake-erie-basin/">
+    <span class="fa fa-seedling"></span>
+     
+    ISDA - WLEB Website
+  </a>
+</li>
+<li>
+  <a href="contacts.html">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contacts
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">WLEB DAP Programs and Projects</h1>
+
+</div>
+
+
+<div id="improving-water-quality" class="section level2">
+<h2>Improving Water Quality</h2>
+<p>Indiana is working with landowners in our communities to help improve the water quality of our streams, rivers, and lakes, and ultimately Lake Erie. There are many groups including the <a href="http://www.in.gov/isda/2342.htm">Indiana State Department of Agriculture</a> partnering on several projects that result in significant measureable load reductions in sediment, nitrogen and total phosphorus in the Lake Erie Basin through education, promotion, development and installation of voluntary water quality programs and best management practice (BMP) implementation.</p>
+</div>
+<div id="action-and-milestone-table" class="section level2">
+<h2>Action and Milestone Table</h2>
+<p>The action and milestone table is a function of the Domestic Action Plan and tracks the progress of the partner groups on their commitments listed in the DAP.</p>
+<p>The Action and Milestone Table is broken up into several sections including restoring natural hydrology and ecology function, urban point and nonpoint sources, rural point and nonpoint sources, education and outreach, and monitoring. The following tables contain partner updates, schedules, and accomplishments for the projects.</p>
+<div id="restore-natural-hydrology-and-ecological-functions" class="section level3">
+<h3>Restore Natural Hydrology and Ecological Functions</h3>
+<div id="htmlwidget-677327c61eae5d3bf393" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-677327c61eae5d3bf393">{"x":{"filter":"none","data":[["1","2"],["Rethinking Drainage for the 21st Century workshop","Ecological maintenance of regulated &amp; unregulated drains to reduce hydrological modification &amp; maintenance needs"],["1.       Workshop with county surveyors and drainage professionals to learn about activities and barriers\r\n2.       The goal is to establish an innovative drainage pilot project","Convene a drainage work group with county surveyors, members of the drainage boards, stream ecology/watershed restoration professionals, and concerned citizens"],["Staff time, travel, and meeting and implementation expenses","Indiana demonstration sites, as well as scientific literature and current research findings"],["The Nature Conservancy and Purdue Extension","DAP Advisory Committee"],["42908","2018, on-going"],[null,null],["First workshop held, additional workshops will follow",null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Objectives/Goals<\/th>\n      <th>Action/Activity<\/th>\n      <th>Tools/Resources<\/th>\n      <th>Responsible Parties<\/th>\n      <th>Time-frame<\/th>\n      <th>Target Reduction<\/th>\n      <th>Outcomes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="point-source-urban" class="section level3">
+<h3>Point Source, Urban</h3>
+<div id="htmlwidget-ec11b06f5972ab174623" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ec11b06f5972ab174623">{"x":{"filter":"none","data":[["1","2","3","4"],["City of Fort Wayne LTCP (outlined at https://www.cityoffortwayne.org/utilities/162-clean-river-team/3208-long-term-control-plan.html)","Stormwater NPDES MS4 Permit","Municipal NPDES permit","Adams County RSD sewer extension"],["Reduce CSOs to the St. Marys and Maumee Rivers","Manage stormwater discharges","Provide guidelines and standards for water quantity and quality management","Extend sewer to unincorporated areas within Adams County, including the Town of Pleasant Mills"],["Staff time and implementation expenses","Staff time and implementation expenses","Staff time and implementation expenses","Staff time and implementation expenses"],[null,null,null,null],[2025,null,null,null],[null,null,null,null],[null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Objectives/Goals<\/th>\n      <th>Action/Activity<\/th>\n      <th>Tools/Resources<\/th>\n      <th>Responsible Parties<\/th>\n      <th>Time-frame<\/th>\n      <th>Target Reduction<\/th>\n      <th>Outcomes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":5},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="nonpoint-source-urban" class="section level3">
+<h3>Nonpoint Source, Urban</h3>
+<div id="htmlwidget-826eb366fe6c246b4eb0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-826eb366fe6c246b4eb0">{"x":{"filter":"none","data":[["1","2","3","4"],["Local ordinances and technical design standards","Revegetate urban stream banks with native plants in the Upper Maumee River","2016 through 2018  Installed over 3,600 linear feet of riparian buffers with woody vegetation in three Upper Maumee critical subwatersheds; Trier ditch (04100005010010), Bullerman (04100005010040), and Six-mile Creek (04100005010060) and 2019 through 2020 Installing 3,600 linear feet of riparian buffers with woody vegetation in 2 Upper Maumee critical subwatersheds; Trier ditch (04100005010010), Bullerman (04100005010040)","Urban Clean Water Indiana Grant - Steuben County, reducing sediment and nutrients in waterbodies through implementation of urban conservation practices in dense residential areas located within 1/2-mile of a river, lake, shore, or perennial stream for improvement of water quality, wildlife habitat, and enhancing aesthetics"],["Provide guidelines and standards for water quantity and quality management","Work with local non-profits to organize native planting opportunities for the community","Organize 2 (not 3) native tree planting opportunities for the community annually","Implement cost-share program, reimbursing landowners 75% of all fees for design/implementation for rain gardens, tree and shrub plantings, water-edge enhancements (filter strips), and rain gardens."],["Staff time and implementation expenses","Two to three community events per year","Work with local non-profits and local business","2018 Clean Water Indiana Urban Conservation Program grant; staff time, and landowner participation"],["City of Fort Wayne Utilities","Save Maumee","Save Maumee","Steuben County SWCD"],[null,null,null,44196],[null,null,"Nitrogen 426.66 lb/yr, phosphorus 253.32 lb/yr, and sediment 253.34 tons/yr",null],["In progress","In progress",null,"In progress"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Objectives/Goals<\/th>\n      <th>Action/Activity<\/th>\n      <th>Tools/Resources<\/th>\n      <th>Responsible Parties<\/th>\n      <th>Time-frame<\/th>\n      <th>Target Reduction<\/th>\n      <th>Outcomes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":5},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="nonpoint-source-rural" class="section level3">
+<h3>Nonpoint Source, Rural</h3>
+<div id="htmlwidget-a5a5119d398d13dd5e30" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a5a5119d398d13dd5e30">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"],["Adams County emergency manure lagoons, one located north and one located south in Adams County","Phosphorus-Risk Reduction Pilot, 319(h) grant project, reimbursing for the reduction of phosphorus-risk potential by implementing conservation practices, including Black Creek (0410050104), Marsh Ditch (0410050106), Sixmile Creek (0410050103), Trier Ditch (0410050102), and Bottern Ditch (0410050105)","Upper Maumee River Implementation, GLRI grant project, reducing nutrient and sediment loading through implementation of conservation practices, including  Black Creek (0410050104), Marsh Ditch (0410050106), Sixmile Creek (0410050103), and Trier Ditch (0410050102).","St. Marys River Watershed Initiative, 319(h) grant project, implementing a paired watershed monitoring project, including the Weber Ditch (041000040502) and the Nickelsen Creek (041000040503) sub-watersheds","Reduce sediment and nutrient loading through installation and adoption of watershed land treatment practices","Reduce streambank erosion, repair streambank damage, and improve wildlife habitat through the City of Auburn","Reduce sediment and nutrient runoff through adoption and installation of conservation practices","Submitted application for design work for two sites within the City of Auburn","Reduce nutrient loading from failed septic systems","Support InField Advantage program by working with participants on data collection and nutrient stewardship (http://www.infieldadvantage.org/)","Support rigorous enforcement of environmental rules &amp; regulations","4R Nutrient Stewardship Certification program","Steuben County SWCD District Cost-Share program to reduce sediment and nutrient loading through adoption and installation of conservation practices  Establish woody plants for long-term erosion control and improvement of water quality, wildlife habitat, and enhanced aesthetics","Develop a response process for reports of manure mishandling &amp; runoff from unregulated livestock operations or land application","Sustainable, functional septic systems throughout the WLEB via ordinances identifying best practices installation, maintenance &amp; repair","Update Septic Issues-Collaborative Solutions Report","Soil Health Partnership","Cover crop discount program"],["1.       One northern lagoon holding ten million gallons of manure\r\n2.       One southern lagoon holding 996,000 gallons of manure","1.       Develop the phosphorus-risk reduction reimbursement program\r\n2.       Implement the phosphorus-risk reduction reimbursement program","1.       Develop a cost-share program targeting conservation practices addressing nutrient loss\r\n2.       Implement the cost-share program reimbursing the full cost of conservation practices\r\n3.       Conduct an education and outreach program to bring about behavioral change","1.       Develop and implement a watershed-wide coordination program\r\n2.       Develop and implement a targeted education and outreach program\r\n3.       Develop and implement targeted social indicator surveyors\r\n4.       Perform and complete paired watershed monitoring and modeling\r\n5.       Perform and complete soil health monitoring","Administer grant and allocate funds for producers","Complete feasibility study on Cedar Creek from Morning Star Road to Eckhart Park","Cover crops, gypsum application, blind inlets, and streambank stabilization","Streambank stabilization / floodplain expansion","Lead septic issues, update of ordinance, and provide cost-share funds for assisting with repair/replacement of septic systems","Help landowners/producers participating in the program to understand their nitrogen management plan\r\nGroups participating include:\r\n1.       INWL – WLEB group\r\n2.       INWA – Adams/Wells group\r\n3.       INST – Steuben/LaGrange group","Determine legitimacy of claims of inconsistent implementation, identify barriers to execution, and establish a process for full implementation","Identify willing landowners, apply for grants, install BMPs, and engage universities in on-farm research","Fourteen acres of trees planted within the West Branch, Fish Creek subwatershed Cover Crops and Tree/Shrub Establishment","Determine agency resources required","Convene a WLEB septic system workgroup","Outlines opportunities for connecting to sewer/ addressing failed septic systems.","Identify willing landowners, attend field days, and share results, as well as five to ten years of tillage, nutrient management, and cover crops","Provide assistance to local small farmers for cover crops and education on benefits of cover crops"],["1.       Manure kept from excessive application and application on frozen ground\r\n2.       Sediment and nutrient load reductions","1.       Phosphorus-risk calculator to determine the potential phosphorus-risk pre- and post- conservation practice implementation\r\n2.       Sediment and nutrient load reductions","Sediment and nutrient load reductions","1.       A water quality sample and conservation practice location database, a watershed conditions database, and a water quality database\r\n2.       4 Conservation practice demonstration workshops, 4 field days, and 4 tours\r\n3.       2 targeted social indicator survey events\r\n4.       QAPP, monitoring program including equipment and protocols, and targeted watershed (L-THIA-LID) model","2015 IDNR LARE grant","IDNR LARE grant","2017 CWI grant","LARE","Updated Onsite Sewage System and Installation Ordinance and DeKalb County SWCD cost-share program","Group leaders time, ISDA staff time, and farmer/producer participation","Reports of violations and field surveys","Staff time and travel","District cost-share funding, staff time, and landowner/producer participation","Current rules and regulations, as well as time and travel study model","Model ordinances and health department experts",null,"Staff time and travel","Demo Farm grant"],["Adams County, local producers, and private landowners","Allen County SWCD, project partners, Advisory Committee, and Steering Committee","Allen County SWCD, project partners, and Steering Committee","Project Coordinator and project partners including Purdue University, Indiana Farm Bureau, Indiana Dairy Producers, Indiana Pork, Indiana State Poultry Association,  Agri-Business Council of Indiana, Indiana Soybean Alliance, Indiana Corn Marketing Council, IDEM, as well as SWCD, NRCS, ISDA, and TNC staff located within the WLEB","DeKalb SWCD","DeKalb County","DeKalb and Steuben County SWCDs","DeKalb County / City of Auburn","DeKalb County Health Department, Commissioners, and Supervisors, as well as Septic Issues Steering Committee","ISDA and Group Leaders","IDEM, OISC, local SWCDs, and others TBD","The Nature Conservancy, Ohio Agribusiness Association, and Nutrient Stewardship Council","Steuben County SWCD","IDEM, OISC, local SWCDs, and others TBD","WLEB local health departments with DAP support","DeKalb County Septic Issues steering committee","The Nature Conservancy, landowners, Soil Health Partnership, and local SWCDs","Adams County SWCD, NRCS, and ISDA"],["2018","43484","43956","44352","2018","43466","43830","Submitted Jan. 2020","42947",null,"2018, on-going","80% of farmed acres under certified management by 2020","on-going","2018","2018, on-going",null,"2015, on-going","2017"],[null,"4,800 tons sediment, 8,300 lbs phosphorus, and 16,300 lbs nitrogen",null,null,null,null,null,null,null,null,null,"Research in progress TBD, and goal is 40% reduction of TP and DRP by 2025",null,null,null,null,"1.       Research in progress",null],["Complete","In progress","In progress","In progress","Completed  Fall 2019","Completed Spring 2019","Completed 12/31/2019","In progress ; announcements made July 2020","Ordinance passed 7/31/2017","In progress",null,"Indiana has one certified facility and is in dialogue to start a 4R program","On going, 26.7 acres of trees; 50 acres of cover crops established within West Branch of Fish Creek",null,null,"Completed 3/31/2019","In progress (five to ten years of tillage, nutrient management, and cover crops)","Complete"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Objectives/Goals<\/th>\n      <th>Action/Activity<\/th>\n      <th>Tools/Resources<\/th>\n      <th>Responsible Parties<\/th>\n      <th>Time-frame<\/th>\n      <th>Target Reduction<\/th>\n      <th>Outcomes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="monitoring" class="section level3">
+<h3>Monitoring</h3>
+<div id="htmlwidget-a436ba0fd0fd432df29f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a436ba0fd0fd432df29f">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],["Secure GLRI grant for auto-sampler on the St. Marys River","Add capacity to sample for DRP laboratory analysis","Collect DRP at IDEM fixed stations in the WLEB","Collect TP, DRP, and nitrate-nitrite samples at 27 sites during recreational season","In-stream water quality","Ecology of two-stage ditches"],["Submit application","Secure laboratory equipment for the ISDH","Investigate necessary resources for collecting and analyzing for DRP","Tri-State Watershed Weekly Water Quality Monitoring program","Monthly and storm grab samples at locations within Fish Creek watershed","Macroinvertebrate sampling at constructed two-stage ditch sites in St. Joseph watershed"],[null,"MOU between IDEM and ISDH, as well as IDEM lab account funding","Time and travel study","TSWA, SJRWI, City of Fort Wayne, USDA ARS, and Allen SWCD support","Staff time, travel, lab work SJWI, Steuben County SWCD, and Joyce Foundation","Staff time, travel, and lab work IPFW and Joyce Foundation"],["IDEM and USGS","IDEM and ISDH","IDEM","TSWA and Allen SWCD","Steuben County SWCD and the Nature Conservancy","IPFW and the Nature Conservancy"],[null,"2017","2017",null,"2014 through 2017","2015 through 2018"],[null,null,null,null,null,null],["Complete","100% Funds secured and MOU executed","DRP sample collection and analysis began on 1/18","In progress","Complete","In progress"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Objectives/Goals<\/th>\n      <th>Action/Activity<\/th>\n      <th>Tools/Resources<\/th>\n      <th>Responsible Parties<\/th>\n      <th>Time-frame<\/th>\n      <th>Target Reduction<\/th>\n      <th>Outcomes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="education-and-outreach" class="section level3">
+<h3>Education and Outreach</h3>
+<div id="htmlwidget-72d4fa3bf7aaa9dd9015" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-72d4fa3bf7aaa9dd9015">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38"],["In-stream water quality","Use the WLEB GIS Story Map to showcase the conservation and monitoring activities going on in the Indiana WLEB watershed","Continue to conduct the spring and fall cover crop and tillage transect survey in the counties in the WLEB (http://www.in.gov/isda/2383.htm)","Report the nutrient load reductions for all ICP assisted conservation practices within the WLEB on an annual basis (http://www.in.gov/isda/3261.htm)","Provide soil health education to 100+ farmers, retailers, and CCAs","Educate producers on production practices related to water quality issues in the WLEB","Educate the public on the WLEB issues","Educate producers/landowners on production/urban practices related to water quality issues in the WLEB","Youth education","Youth education for 32 years, hands-on educational event for 4th grade students of the Metropolitan School District of Steuben County to teach soil health water quality, and other conservation-related subjects","Urban Clean Water Indiana Grant - Steuben County, reducing sediment and nutrients in waterbodies through education and outreach of urban conservation practices related to water quality issues","Educate homeowners/landowners urban practices related to water quality issues in the Maumee WLEB","Partner with local non-profits to harvest and collect native seeds","Work with local non-profits to organize community urban stream bank restoration projects within the upper Maumee watershed","Sponsor and present at soil health, 4R, and farmer working group field days and events in IN","Youth education","Youth and adult education","Youth education","Youth education","Youth education","Provide education on cover crops, wetlands, filter strips, and wildlife habitat and water quality issues","Adult and youth education","Public education on BMPs, soil health, watersheds, water quality, and pollinators","Youth education","For 22 years, all 6th graders from public, parochial, and homeschool attend to learn lessons in conservation","Adult education","Provide education materials explaining the WLEB and how actions affect others (promotes BMPs), how watersheds are connected and effect one another, and proper management of manure and how it effects phosphorus in the soil","Education on cover crops and how it helps phosphorous levels on farms","Public promotion of soil health and water quality (combined annual meeting of SWCD, Farm Bureau, and Pork Producers)","Education of proper management of manure and reducing our phosphorous and education on value of manure and the IN State Chemist standards","Designed and disbursed nutrient management packets to encourage manure management and to ease record keeping for our producers","Education on importance of soil testing and the levels of phosphorous, soil health and best management practices are encouraged, as well as follow-up meeting to interpret test and provide aerial map of farm","Education on the importance of manure and its value and a follow-up farm visit","Provide education on WLEB, phosphorous levels in our area, and water and marine life testing","Two meetings (am and pm) regarding education on WLEB, effects on phosphorous, water quality, and benefits and use of gypsum","Promote use and benefits of cover crops and no-till practices, specifically drill being modified to be pulled by horses or tractor","Educate on a variety of stormwater and water quality related topics to neighborhood groups and other organizations","Hands-on rain garden workshops and incentives for City of Fort Wayne residents to install a rain garden"],["Weekly sampling during recreation season and monthly sampling during non-recreation season at ten locations","Update  Story Map annually, as necessary","Partnership staff in Adams, Allen, DeKalb, Noble, Steuben, and Wells counties will conduct this transect in the spring following planting on an annual or bi-annual basis","ISDA staff will use the Region 5 Model to analyze practices and show sediment and nutrient load reductions","Seeing Green: Fields and Profits conservation day","Annual agronomy field day, held in conjunction with The Andersons, Purdue Extension, and surrounding SWCDs","Planned and implemented the Watershed-n-Spread event. Dr. Chad Penn presented “WLEB: the perfect storm”","Annual meeting, presentations, various district workshops, booth at 4H Fair, and educational materials","Educational materials provided on pollinators, soil health, trees, water quality, and summer conservation camps","4th grade youth conservation field day","Conduct education and outreach programs to increase urban audiences’ awareness about water quality and soil conservation practices; help this segment of the population to rethink their properties and reduce their environmental impact.","Promote urban BMPs for storm water management from streets, parking lots, and other impervious pavement surfaces to community members and homeowners in the city","Seed harvest event in wetland, preserve, or natural habitat","Collect/purchase 100 lbs 4 acres worth of native seeds planted on the stream and riverbanks and collect/ purchase 1,100 5,560 native trees to be planted on severely eroded riverbanks and streams; secure GLRI funding","Two to three events/year, serve on Tri-State Watershed Alliance Board, and sponsor and help host annual expo","River Camp","Johnny Appleseed Festival","Izaak Walton League Conservation Camp","Envirothon/aquatics","Canterbury Day of Service","Land management field day","Various pasture walks at farms, including the Amish","Booth at Adams County 4H Fair","Earthworms, investigating soil health, frogs, owls, butterflies, and trees","Splash event: watershed, common water, trees, pollinators, earthworms, nematodes, and soil health","Various field days focused on  water quality and soil health topics","Adams County Watershed, Adams County Watershed Maps, and Manure Management Practices booklets","Cover Crop PARP meeting","Ag extravaganza","Winter ag meeting","Nutrient management packets","Soil testing","Manure tests","OSU Stone Lab tour on Lake Erie","Connect the Dots water quality meeting","Purchase of new Land Pride 7’ no-till drill","Speakers available to discuss stormwater and water quality related topics","Hands-on rain garden workshop held locally in Fort Wayne to provide rain garden and stormwater education"],["Staff time, travel, and lab work","ISDA staff and WLEB Story Map located at http://isda.maps.arcgis.com/apps/MapSeries/index.html?appid=75881b3341714bc28b5d820405accacb","ICP staff and time","Region 5 Model and ISDA staff time","NRCS GLRI grant, Soil Health Partnership (SHP), and Upper 319 grant","Partial funding provided through 2015 and 2017 CWI grants","Completed as part of the programing efforts of the SJRWI","Funding provided through District Base of Operations","Staff time, travel, and educational material fees","Staff and volunteer time, travel, and educational material fees","2018 Clean Water Indiana Urban Conservation Program grant, staff time, and landowner participation","Funding through grants and in-kind donations (save maumee does not receive donations or funding to work on this issue.  It is more of a byproduct of our work)","Public and private land owners, as well as one to two local groups","One to two active local community non-profit groups","Staff time, travel, and sponsorship/exhibitor fees","Hoosier Riverwatch, GoFishIN, and Project WET (education ages 8-12)","Project WET, Project Wild, and HWHP (child and adult)","Project WET and Hoosier Riverwatch (ages 6-16)","Hoosier Riverwatch (G10-12)","Project WET and Hoosier Riverwatch (G5-8)","CREP and Region 5 Model","Cooperative Amish Outreach grant and Demo Farm grant",null,null,null,"Cooperative Amish Outreach grant, Demo Farm grant, and various other funding sources","Amish Outreach grant","Center Seeds",null,"Amish Outreach grant","Amish Outreach grant","Amish Outreach grant","Amish Outreach grant","Demo Farm grant","Amish Outreach grant, Dr. Chris Winslow","Demo Farm grant","Staff time, as well as meeting and material expenses","Staff time, meeting and material expenses, travel expenses, and incentives to Fort Wayne residents"],["City of Fort Wayne Utilities","ISDA","ICP","ISDA and ICP","NRCS NE Area, SHP, Adams County and Allen County SWCD","DeKalb and Steuben Counties","SJRWI, Purdue Extension, City of Auburn, and DeKalb SWCD","Steuben County SWCD","Steuben County SWCD and NE Conservation Districts","Steuben County SWCD, Ralph E. Taylor Conservation Grant through the Steuben County Community Foundation","Steuben County SWCD","Save Maumee, City Utilities of Fort Wayne, and ACPWQ","Little River wetlands project, ACRES Land Trust, Save Maumee","Save Maumee","The Nature Conservancy and event partners","FWP&amp;R, Environmental Resources Center, and ACPWQ","ACPWQ and Central Lions","IWL and ACPWQ","NE IN Schools, SWCDs, NRCS, IDNR, and ACPWQ","Canterbury MS, TSWA, and ACPWQ","Adams County SWCD, DNR, Little Turtle Wetland, NRCS, Davey Resources, NTFF, and ISDA","Adams County SWCD and NRCS","Adams County SWCD","Adams County SWCD","Adams County SWCD","Adams &amp; Allen County SWCDs, and other partners","Adams County SWCD, NRCS, and ISDA","Center Seeds, Purdue Extension, and Adams County SWCD","Adams County SWCD, Pork Producers, and Farm Bureau","Adams County SWCD, NRCS, and ISDA","Adams County SWCD, NRCS, and ISDA","Adams County SWCD, NRCS, and ISDA","Adams County SWCD, NRCS, and ISDA","Adams County SWCD, NRCS, and ISDA","Adams County SWCD, NRCS, and ISDA","Adams County SWCD and NRCS","City of Fort Wayne Utilities","City of Fort Wayne Utilities"],["Annually",null,"April through June, every two years, and   October through December, annually","March, annually","42957","Annually","42796","Annually","Annually","Annually","44196",null,"Annually","Two seed harvest projects, annually and two tree planting projects in April and October, annually and 1 annual public trash removal in September",null,"July 5-8, 2016 and August 7-11, 2017","September 19-20, 2015, September 17-18, 2016, and September 16-17, 2017","6/25/2015 and 6/23/2016","3/19/2015 and 3/17/2016","5/20/2015, 5/26/2016, and","2015","Annually","Annually","Annually","Annually","Annually","2016","2016","Annually","2017","2017","6/2015 through 6/2017","6/2015 through 6/2017","42887","42443","42887",null,"Annual meetings typically held in spring"],[null,null,null,"Sediment 34,000 tons/yr, Nitrogen 86,000 lbs/yr, and phosphorus 42,000 lbs/yr",null,null,null,null,null,null,null,null,null,"Nitrogen 426.66 lb/yr, phosphorus 253.32  lb/yr, and sediment 253.34 tons/yr",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["In progress","In progress","In progress","In progress","Complete","On going","Complete","In progress, hundreds impacted","In progress, an average of 1,450 students, annually","In progress, an average of 300 students, annually","In progress","In progress","In progress","In progress","In progress (direct contact with 1,000 WLEB stakeholders)","Complete","Complete","Complete","Complete","Complete","Complete","In progress","In progress, thousands impacted","In progress, thousands impacted","In progress, thousands impacted","In progress, hundreds impacted","Complete, hundreds dispersed","Complete, over a hundred impacted","In progress, hundreds impacted","Complete","Complete","Complete, over a hundred tests","Complete","Complete","Complete","Complete","In progress","In progress"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Objectives/Goals<\/th>\n      <th>Action/Activity<\/th>\n      <th>Tools/Resources<\/th>\n      <th>Responsible Parties<\/th>\n      <th>Time-frame<\/th>\n      <th>Target Reduction<\/th>\n      <th>Outcomes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="conservation-efforts" class="section level2">
+<h2>Conservation Efforts</h2>
+<p>Voluntary conservation efforts made by private landowners in Indiana, with support provided by the <a href="http://icp.iaswcd.org/">Indiana Conservation Partnership (ICP)</a>, have contributed significantly to the efforts to reduce sediment and nutrients from entering Indiana’s tributaries and rivers. The top conservation practices implemented by landowners that contribute to these reductions include:</p>
+<ul>
+<li>Cover Crops</li>
+<li>Conservation Cover</li>
+<li>Residue and Tillage Management, No-Till</li>
+<li>Tree/Shrub Establishment</li>
+</ul>
+<p>Conservation programs that are used by private landowners include the ISDA <a href="https://www.in.gov/isda/divisions/soil-conservation/clean-water-indiana/">Clean Water Indiana (CWI)</a> Program, the Indiana Department of Natural Resources’ (IDNR) <a href="http://www.in.gov/dnr/fishwild/2364.htm">Lake and River Enhancement (LARE)</a> Program, as well as federally funded programs through EPA’s <a href="https://www.in.gov/idem/nps/funding/clean-water-act-section-319h-grants/">Section-319 Program</a> administered by the Indiana Department of Environmental Management (IDEM), and the USDA’s Farm Bill Programs like the <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/national/programs/financial/eqip/">Environmental Quality Incentive Program (EQIP)</a>, the <a href="https://www.usda.gov/media/blog/2015/01/16/rcpp-help-improve-water-quality-lake-erie-other-american-waterbodies">Regional Conservation Partnership Program (RCPP)</a>, the <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detailfull/national/programs/?&amp;cid=nrcsdev11_023903">Great Lakes Restoration Initiative (GLRI)</a> Program, the <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/in/programs/easements/acep/STELPRDB1248149/">Wetlands Reserve Easement Program (WREP)</a>, the <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/national/programs/financial/csp/">Conservation Stewardship Program (CSP)</a>, and the <a href="https://www.fsa.usda.gov/programs-and-services/conservation-programs/conservation-reserve-program/index">Conservation Reserve Program (CRP)</a>.</p>
+</div>
+<div id="soil-health" class="section level2">
+<h2>Soil Health</h2>
+<p><a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/health/">Soil Health</a>, also referred to as soil quality, is defined as the continued capacity of soil to function as a vital living ecosystem that sustains plants, animals, and humans. Soil contains living organisms that when provided the basic necessities of life - food, shelter, and water – perform functions required to produce food, fuel and fiber. (USDA, NRCS)</p>
+<p>Soil Health has four key principles for all types of lands:</p>
+<ul>
+<li>Minimize Disturbance</li>
+<li>Optimize Soil Cover</li>
+<li>Optimize Biodiversity</li>
+<li>Provide Continuous Living Roots</li>
+</ul>
+<p>By improving the health of the soil, it can:</p>
+<ul>
+<li>Increase organic matter</li>
+<li>Increase aggregate stability</li>
+<li>Increase water infiltration</li>
+<li>Increase water-holding capacity</li>
+<li>Improve nutrient use efficiency</li>
+<li>Enhance and diversify soil biology</li>
+</ul>
+<p>One of the most wide-scale and effective efforts in Indiana on water quality improvement is the education and promotion of soil health systems and conservation cropping systems in agriculture. The members of the <a href="http://icp.iaswcd.org/">Indiana Conservation Partnership (ICP)</a> are actively promoting a total conservation cropping systems approach to farming, including the education, training and outreach provided by the <a href="http://ccsin.iaswcd.org/">Conservation Cropping System Initiative (CCSI)</a>. This focus on soil health and function ultimately addresses Indiana’s primary natural resource concerns. Soil health practices include conservation tillage, using cover crops, adaptive nutrient management, integrated weed and pest management, diverse crop rotations, precision farming technology and prescriptive buffers. Soil Health is the Goal!</p>
+<p>Conservation Tillage Practices, such as no-till, strip-till, ridge till and mulch till, are practices that leave crop residues on the soil surface to reduce soil erosion by water. Cover Crops are grown between regular cash crops like corn and soybeans to ensure a living root is growing all year long. Cover crops reduce soil compaction; they cover the soil and protect it from erosion; improve soil structure; increase soil organic matter; fix nitrogen and scavenge nitrogen depending on the species of cover crop used; and can produce forage or pasture.</p>
+<p>To measure the impacts and trend of conservation tillage, Indiana begin a Tillage Transect in the spring of 1990, which is a predetermined route and on-the-ground survey, that measures the amount of residue left on the ground after planting. The ICP introduced a cover crop assessment to the spring transect in 2011. In 2014, a Fall Tillage and Cover Crop Transect was initiated. The information here shows results of the most recent reports and maps from the transect data within the Basin. For more information, visit the <a href="https://www.in.gov/isda/divisions/soil-conservation/cover-crop-and-tillage-transect-data/">Cover Crop and Tillage Transect Data page</a>.</p>
+</div>
+<div id="education-efforts" class="section level2">
+<h2>Education Efforts</h2>
+<div id="you-me-and-water-quality" class="section level3">
+<h3>You, Me, and Water Quality</h3>
+<p>The Indiana Department of Environmental Management (IDEM) has an interactive website that looks at how our activities impact water quality, and how we can change things for the better. Visit the <a href="http://www.in.gov/idem/nps/pages/watercycle/">You, Me, and Water Quality website</a> to view a graphic on how to learn more about everyday actions that change our water quality.</p>
+</div>
+<div id="rs-nutrient-stewardship-program" class="section level3">
+<h3>4Rs Nutrient Stewardship Program</h3>
+<p>To help solve the problem of excess nutrients in our waters, the <a href="http://4rcertified.org/">4R Nutrient Stewardship Certification Program</a> was created and launched in March 2014. The certification program is composed of a set of science-based standards developed with industry and academic assistance which allow nutrient service providers a chance to follow standard recommendations that are third-party auditable. This is done to insure the standards are being followed when fertilizer recommendations are given to farmers. This program encourages agricultural nutrient service providers to adopt proven practices through the 4Rs – the Right Source, Right Rate, Right Time, and Right Place. In the Western Lake Erie Basin, there is one certified 4R retailer – click on the point on the map to learn more.</p>
+</div>
+<div id="conservation-cropping-systems-initiative" class="section level3">
+<h3>Conservation Cropping Systems Initiative</h3>
+<p>The <a href="http://ccsin.iaswcd.org/">Conservation Cropping System Initiative (CCSI)</a> is a partnership between numerous organizations in Indiana, including the Indiana Conservation Partnership, all working toward improving soil health, soil productivity and cropping systems. There is one CCSI <a href="http://ccsin.iaswcd.org/soil-health-hubs/">Soil Health hub</a> farm located in Adams County where research data on cover crops, no-till, soil sampling, etc. is gathered, occasional educational events and workshops take place, and demonstration plots are accessible. Click on the map to see information about this site. Information on CCSI <a href="http://ccsin.iaswcd.org/events/">educational events</a> and workshops around the state can be found on the CCSI website.</p>
+</div>
+<div id="infield-advantage-infa" class="section level3">
+<h3>INfield Advantage (INFA)</h3>
+<p><a href="http://www.infieldadvantage.org/">INFA</a> is a proactive, collaborative opportunity for farmers to collect and understand personalized, on-farm data to optimize their management practices to ultimately improve their bottom line and benefit the environment. Through INFA, farmers use research data from their own farms and others in their area to evaluate the effectiveness and economic pros and cons of different management practices, such as nutrient application rates, timing, and form. INFA is funded through the Indiana Corn Marketing Council and the Indiana Soybean Alliance with checkoff funds and is being offered at no additional charge to producers. The WLEB watershed in Indiana has four (4) active INFA groups. Click on the map to see locations of the INFA group leaders, and visit the <a href="http://www.infieldadvantage.org/">INFA website</a> to review farm data from these groups.</p>
+</div>
+<div id="regional-conservation-partnership-program-rcpp" class="section level3">
+<h3>Regional Conservation Partnership Program (RCPP)</h3>
+<p>In 2015, the WLEB Partnership was awarded funding for 5 years under the Natural Resources Conservation Service (NRCS), <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/national/programs/financial/rcpp/">RCPP for The Tri-State Western Lake Erie Basin Phosphorus Reduction Initiative</a>. This program encourages partners to be creative and to think of new ways to improve soil health and water quality of our waterways. Project partners identified innovative conservation practices and demonstration sites in the field, at the edge-of-fields, and in ditches, and a component of this initiative is education not only to the farmers, but to County Crop Advisors and Ag retailers. This proposal includes demonstration sites in Michigan, Indiana, and Ohio, and each site offers unique conservation practices.</p>
+</div>
+<div id="swcd-local-education" class="section level3">
+<h3>SWCD Local Education</h3>
+<p>The Soil and Water Conservation Districts (SWCDs) within the Western Lake Erie Basin offer many youth and adult education programs throughout the year. They also host conservation field days and workshops for farmers. <a href="http://www.in.gov/isda/2370.htm">Contact your local SWCD</a> to learn more about educational opportunities.</p>
+</div>
+</div>
+<div id="rural-residents" class="section level2">
+<h2>Rural Residents</h2>
+<p>Rural community members can play their part to improve water quality by implementing conservation practices through participation in voluntary programs with Federal, State and Local educational and cost-share programs.</p>
+<p>There are specific programs and funding sources which help landowners install conservation practices on their land. These practices help to improve the water quality of local water bodies as well as downstream in the Maumee River, and ultimately Lake Erie. For specific programs and cost-share opportunities, contact your local <a href="http://www.in.gov/isda/2368.htm">Soil and Water Conservation District (SWCD)</a> or <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/in/contact/">Natural Resources Conservation Service (NRCS)</a> office to get the latest information on local, state and federal programs.</p>
+<p>The <a href="http://www.in.gov/isda/2361.htm">State Soil Conservation Board</a>, through the Indiana State Department of Agriculture offers funds through the Clean Water Indiana Program (CWI), which is a grant program established to provide financial assistance to landowners and conservation groups. CWI funds are used to implement conservation practices which reduce nonpoint sources of water pollution through education, technical assistance, training, and cost sharing programs. Within this basin there are several active <a href="http://www.in.gov/isda/2379.htm">CWI grants</a>.</p>
+<p>Through the <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/in/programs/landscape/NRCSEPRD390813/">Great Lakes Restoration Initiative (GLRI)</a>, NRCS provides funds to accelerate conservation efforts on private lands located in targeted watersheds that could have the biggest impact on improving water quality throughout the Great Lakes Region. One of these watersheds includes the Western Lake Erie Basin.</p>
+<p>Several SWCDs provide rental equipment that is made available to farmers and landowners, such as no-till drills and warm season grass planters. Many of the districts also have funding available through the <a href="http://www.in.gov/idem/nps/2524.htm">IDEM 319 Grant Program</a>, which provides funding for various types of projects that work to reduce nonpoint source water pollution: funds may be used to conduct assessments, develop and implement TMDLs and watershed management plans, provide technical assistance, demonstrate new technology and provide education and outreach. <a href="https://www.in.gov/isda/divisions/soil-conservation/soil-and-water-conservation-districts/">Contact your local SWCD</a> for more information.</p>
+<p>The goal of the IDNR, Division of Fish &amp; Wildlife’s LARE Program is to protect and enhance aquatic habitat for fish and wildlife, and to insure the continued viability of Indiana’s publicly accessible lakes and streams for multiple uses, including recreational opportunities. Grant funds can be used on Invasive Aquatic Vegetation Management, for Logjam and Sediment Removal, for Watershed Land Treatment Projects, and on Biological, Engineering, Design and Construction Projects. Check out the LARE Program website or contact your local SWCD for more information.</p>
+</div>
+<div id="other-efforts" class="section level2">
+<h2>Other Efforts</h2>
+<p>Within the Western Lake Erie Basin in Indiana, there are several organizations and watersheds groups that work to protect our natural resources, educate the public, and promote the health of the streams, rivers and lakes. To learn more about just a few of these organizations and watershed groups located within the Basin, click on the links below:</p>
+<p>Resource Conservation &amp; Development: <a href="http://wood-land-lakes.org/">Wood-Land-Lakes RC&amp;D</a>.</p>
+<p><a href="https://savemaumee.org/">Save the Maumee</a> is a grassroots organization whose purpose is to preserve, protect and improve the ecosystems of the Upper Maumee River and Maumee Watershed by increasing public awareness through advocacy, collaboration, education and hands-on projects.</p>
+</div>
+<div id="urban-residents" class="section level2">
+<h2>Urban Residents</h2>
+<p>Urban community members can play their part to improve water quality by participating in voluntary programs through Federal, State and Local educational and cost-share programs.</p>
+<div id="clear-choices-clean-water" class="section level3">
+<h3>Clear Choices, Clean Water</h3>
+<p>There are many options for improving local waterways as well as downstream in the Maumee River and ultimately Lake Erie. One way is to participate in the <a href="http://indiana.clearchoicescleanwater.org/">Clear Choices Clean Water education campaign</a> created to increase public awareness about the choices we make and the impacts they have on our streams, rivers, lakes and ground water. By educating individuals on conservation practices such as landscaping with native plants, maintaining septic systems, using less lawn fertilizer and managing yard and pet waste, and giving them the tools needed to make behavior changes, the Clear Choices Clean Water program empowers everyone to do their part for water quality and conservation.</p>
+</div>
+<div id="backyard-conservation" class="section level3">
+<h3>Backyard Conservation</h3>
+<p>Many of the local Soil and Water Conservation District (SWCD) offices have educational resources on Backyard Conservation and sometimes host workshops on urban conservation practices such as how to build a rain barrel. For more information on urban conservation, <a href="http://www.in.gov/isda/2368.htm">contact your local SWCD</a>.</p>
+<p>State and local governments, volunteer groups, water quality professionals, and concerned citizens are working together to clean up our lakes, rivers, streams and wetlands. You can help! Whether you live in a big city or in the country, you can prevent nonpoint source pollution by taking simple actions on your property or in your community. The following are some simple solutions to reduce or stop nonpoint source pollution. Together, we can all make a difference. To read more about these solutions visit the <a href="https://www.in.gov/idem/nps/what-is-nonpoint-source-pollution/what-you-can-do-to-reduce-or-stop-nonpoint-source-pollution/">Nonpoint Source Pollution Website</a>.</p>
+<ul>
+<li>Dispose of oil and household chemicals properly</li>
+<li>Maintain septic tanks</li>
+<li>Create and enhance riparian corridors</li>
+<li>Pick up pet waste</li>
+<li>Take care of big issues on small farms</li>
+<li>Read the label – use lawn and garden fertilizers wisely</li>
+<li>Plant a rain garden</li>
+<li>Connect you downspouts to rain barrels</li>
+<li>Use porous pavement</li>
+<li>Responsible car washing</li>
+</ul>
+</div>
+<div id="organized-volunteering" class="section level3">
+<h3>Organized Volunteering</h3>
+<p>If you have a local scout group or a 4-H club that is looking to help contribute to cleaning up local waterways, contact the <a href="http://www.acwater.org/Storm_Drain">Allen County Partnership for Water Quality</a> to inquire about the storm drain labeling program. <a href="http://www.sjrwi.org/home">The St. Joseph River Watershed Initiative</a> is a non-profit partnership which protects, restores and encourages people to enjoy the St. Joseph River and its watershed. The St. Joseph River watershed stretches across 694,400 acres through six counties in Indiana, Ohio and Michigan. This group focuses on both urban and agriculture educational programs and they are always looking for volunteers to get involved in cleaning up the St. Joe.</p>
+</div>
+<div id="local-government-opportunities" class="section level3">
+<h3>Local Government Opportunities</h3>
+<p>If you are a municipality wanting to get involved in WLEB efforts, please check out the <a href="https://ohiowatersheds.osu.edu/groups/maumee-river-basin-partnership-localgovernments-mrbplg">Maumee River Basin Partnership of Local Governments (MRBPLG)</a>. This group is composed of cities, towns, villages, townships, counties, and watershed groups. This group helps to improve water quality within the basin, showcases the success of best management practices, and provides educational opportunities.</p>
+</div>
+</div>
+
+<p style="text-align: center;">
+    <img src="west_lake_erie_basin.jpg" alt="WLEB Logo" style="width:150px;height:110px;" href="https://www.in.gov/isda/divisions/soil-conservation/western-lake-erie-basin/">
+</p>
+
+<p style="text-align: center;">Western Lake Erie Basin Domestic Action Plan Advisory Committee</p>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Water Quality Monitoring</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Western Lake Erie Basin Domestic Action Plan</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Sections
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="index.html">Background</a>
+    </li>
+    <li>
+      <a href="annex_4_dap.html">Annex 4 DAP</a>
+    </li>
+    <li>
+      <a href="water_quality_monitoring.html">Monitoring</a>
+    </li>
+    <li>
+      <a href="programs_and_projects.html">Programs and Projects</a>
+    </li>
+    <li>
+      <a href="accomplishments.html">Accomplishments</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="upcoming_events.html">
+    <span class="fa fa-calendar"></span>
+     
+    Upcoming Events
+  </a>
+</li>
+<li>
+  <a href="https://www.in.gov/isda/files/Lake-Erie-Domestic-Action-Plan-Final.pdf">
+    <span class="fa fa-file-alt"></span>
+     
+    Domestic Action Plan
+  </a>
+</li>
+<li>
+  <a href="https://www.in.gov/isda/divisions/soil-conservation/western-lake-erie-basin/">
+    <span class="fa fa-seedling"></span>
+     
+    ISDA - WLEB Website
+  </a>
+</li>
+<li>
+  <a href="contacts.html">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contacts
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Water Quality Monitoring</h1>
+
+</div>
+
+
+<p>Water Quality (WQ) monitoring gathers water quality data. Monitoring can tell what rivers, streams and watersheds need to be an area of focus or prioritization for improvement. There are multiple Federal, State, and Local agencies, and groups monitoring water quality within Indiana. Data that is gathered and measured includes phosphorus loads, which has been the cause of harmful algae blooms (HABs) in the western basin of Lake Erie for many years. Monitoring data help to target conservation efforts to where they are most effective.</p>
+<p><img src="Map files/190318_Monitoring Logistics in IN's WLEB Map.jpg" width="1650" /></p>
+<p>There are 12 sites located throughout the WLEB in Indiana that are part of the <a href="http://www.in.gov/idem/">Indiana Department of Environmental Management’s (IDEM)</a> <a href="http://www.in.gov/idem/cleanwater/pages/fixed_station/">Fixed Station Network</a>. These sites do not change from year to year and they are sampled monthly for nutrients, major ions, metals and other field parameters.</p>
+<p>The <a href="https://in.water.usgs.gov/">U. S. Geological Survey (USGS)</a> has 21 existing streamflow gage monitoring sites located throughout the Western Lake Erie Basin in Indiana. To view monitoring data from these USGS sites, visit the <a href="https://waterdata.usgs.gov/in/nwis/current/?type=flow">National Water Information System: Mapper</a>.</p>
+<p>The <a href="https://www.ars.usda.gov/ceap/indiana-sjr/">USDA, Agricultural Research Service (ARS)</a> has 12 sites located in the St. Joseph River Basin that include 8 stream sites and 4 edge-of-field sites. The 8 stream sites are monitored for discharge, nutrients, pesticides and suspended sediments, and the 4 edge-of-field sites are sampled for nutrients, pesticides and suspended sediments. Weather and soil conditions are also monitored at 10 of the 12 sites. Only the 8 ditch sites are located on the map. These sites are monitored as part of the <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/national/technical/nra/ceap/">Conservation Effects Assessment Project (CEAP)</a> study.</p>
+<p>The St. Joseph River Watershed Initiative (SJRWI), the Allen County SWCD, and the Tri-State Watershed Alliance have partnered together to conduct sampling in all four of the watersheds in the WLEB watershed in Indiana. There are multiple sites that are monitored for temperature, pH, dissolved oxygen, turbidity, pesticides, E. coli, total phosphorus, and nitrate. Here is a link to the SJRWI monitoring data <a href="http://www.sjrwi.org/content/water-quality-monitoring">website</a>.</p>
+<p>The USGS, USEPA, and NRCS are working cooperatively on a joint project to monitor overland flow and drain tile at two separate locations that drain into Black Creek near Harlan, IN. This project to collect the water quality data began in 2015 and is currently funded for 5 years. The first 3 years are baseline with no conservation applied and the next 2 years conservation practices will be applied at one site while the other will remain baseline. Tests are run for nutrients and sediment. To view the data from these edge-of-field monitoring sites, visit the <a href="https://in.water.usgs.gov/">USGS website</a>.</p>
+<p>The Conservation Effects Assessment Project (CEAP) was initiated by USDA’s Natural Resources Conservation Service (NRCS), Agricultural Research Service (ARS), and National Institute of Food and Agriculture (NIFA) in 2002 as a means to analyze societal and environmental benefits gained from the 2002 Farm Bill’s substantial increase in conservation program funding. The CEAP-1 survey was conducted on agricultural lands across the United States in 2003-06. The goal of CEAP-1 was to establish a scientific understanding of the effects of agricultural management and conservation practices at the watershed, regional, and national scales. As CEAP evolved, the scope expanded to include analyses of the impacts and efficacy of agricultural management and adoption of various conservation practices on maintaining and improving soil and water quality at multiple spatial and temporal scales. Click here for the full report titled <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/nrcseprd1355824.pdf">Conservation Practice Adoption on Cultivated Cropland Acres: Effects on Instream Nutrient &amp; Sediment Dynamics and Delivery in Western Lake Erie Basin, 2003-2006 and 2012</a>.</p>
+
+<p style="text-align: center;">
+    <img src="west_lake_erie_basin.jpg" alt="WLEB Logo" style="width:150px;height:110px;" href="https://www.in.gov/isda/divisions/soil-conservation/western-lake-erie-basin/">
+</p>
+
+<p style="text-align: center;">Western Lake Erie Basin Domestic Action Plan Advisory Committee</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Western Lake Erie Basin Conservation Accomplishments</title>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Western Lake Erie Basin Domestic Action Plan</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Sections
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="index.html">Background</a>
+    </li>
+    <li>
+      <a href="annex_4_dap.html">Annex 4 DAP</a>
+    </li>
+    <li>
+      <a href="water_quality_monitoring.html">Monitoring</a>
+    </li>
+    <li>
+      <a href="programs_and_projects.html">Programs and Projects</a>
+    </li>
+    <li>
+      <a href="accomplishments.html">Accomplishments</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="upcoming_events.html">
+    <span class="fa fa-calendar"></span>
+     
+    Upcoming Events
+  </a>
+</li>
+<li>
+  <a href="https://www.in.gov/isda/files/Lake-Erie-Domestic-Action-Plan-Final.pdf">
+    <span class="fa fa-file-alt"></span>
+     
+    Domestic Action Plan
+  </a>
+</li>
+<li>
+  <a href="https://www.in.gov/isda/divisions/soil-conservation/western-lake-erie-basin/">
+    <span class="fa fa-seedling"></span>
+     
+    ISDA - WLEB Website
+  </a>
+</li>
+<li>
+  <a href="contacts.html">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contacts
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Western Lake Erie Basin Conservation Accomplishments</h1>
+
+</div>
+
+
+<div id="project-highlights" class="section level2">
+<h2>Project Highlights</h2>
+<div id="community-manure-storage-lagoons---allen-county" class="section level3">
+<h3>Community Manure Storage Lagoons - Allen County</h3>
+</div>
+<div id="amish-outreach-program---adams-county" class="section level3">
+<h3>Amish Outreach Program - Adams County</h3>
+</div>
+<div id="sanitary-sewer-extension---allen-county-rural-sewer-district" class="section level3">
+<h3>Sanitary Sewer Extension - Allen County Rural Sewer District</h3>
+</div>
+</div>
+<div id="western-lake-erie-basin-load-reductions" class="section level2">
+<h2>Western Lake Erie Basin Load Reductions</h2>
+<p>The <a href="http://it.tetratech-ffx.com/steplweb/models$docs.htm">EPA Region 5 Nutrient Load Reduction Model</a> is used statewide to analyze and model all the assisted conservation practices that are implemented through assistance from the ICP staff. Practices do not include the many unassisted practices designed and installed solely by a private landowner without ICP assistance. While this model is project-specific, it provides a valuable perspective on a larger scale when showing the collective reductions of practices across several programs. Click on the map to view results of the nutrient load reductions in the Western Lake Erie Basin and see the graphics below.</p>
+<p>To view additional information on the nutrient load reductions, please visit the <a href="http://www.in.gov/isda/2991.htm">Indiana Nutrient Reduction Strategy website</a>.</p>
+<div id="htmlwidget-45d9018f291b7004dd9d" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-45d9018f291b7004dd9d">{"x":{"data":[{"orientation":"v","width":[0.3,0.3,0.3,0.3],"base":[0,0,0,0],"x":[0.7,1.7,2.7,3.7],"y":[32928.4385991833,190152.37567911,214639.257133566,156012.903757221],"text":["Watershed: Auglaize<br />value:  32928.44<br />Load Reduction Type: Nitrogen Reduction (lbs.)","Watershed: St. Joseph<br />value: 190152.38<br />Load Reduction Type: Nitrogen Reduction (lbs.)","Watershed: St. Marys<br />value: 214639.26<br />Load Reduction Type: Nitrogen Reduction (lbs.)","Watershed: Upper Maumee<br />value: 156012.90<br />Load Reduction Type: Nitrogen Reduction (lbs.)"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(101,173,194,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Nitrogen Reduction (lbs.)","legendgroup":"Nitrogen Reduction (lbs.)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.3,0.3,0.3,0.3],"base":[0,0,0,0],"x":[1,2,3,4],"y":[16474.940049569,95385.8482922655,102834.54694555,78202.8373033488],"text":["Watershed: Auglaize<br />value:  16474.94<br />Load Reduction Type: Phosphorus Reduction (lbs.)","Watershed: St. Joseph<br />value:  95385.85<br />Load Reduction Type: Phosphorus Reduction (lbs.)","Watershed: St. Marys<br />value: 102834.55<br />Load Reduction Type: Phosphorus Reduction (lbs.)","Watershed: Upper Maumee<br />value:  78202.84<br />Load Reduction Type: Phosphorus Reduction (lbs.)"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(35,59,67,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Phosphorus Reduction (lbs.)","legendgroup":"Phosphorus Reduction (lbs.)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.3,0.3,0.3,0.300000000000001],"base":[0,0,0,0],"x":[1.3,2.3,3.3,4.3],"y":[12228.3348461245,82038.3529584009,79109.465010347,60181.9980731881],"text":["Watershed: Auglaize<br />value:  12228.33<br />Load Reduction Type: Sediment Reduction (tons)","Watershed: St. Joseph<br />value:  82038.35<br />Load Reduction Type: Sediment Reduction (tons)","Watershed: St. Marys<br />value:  79109.47<br />Load Reduction Type: Sediment Reduction (tons)","Watershed: Upper Maumee<br />value:  60182.00<br />Load Reduction Type: Sediment Reduction (tons)"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(232,70,70,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Sediment Reduction (tons)","legendgroup":"Sediment Reduction (tons)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":46.2864259028643,"r":7.97011207970112,"b":43.8356164383562,"l":66.1519302615193},"paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(112,111,111,1)","family":"","size":15.9402241594022},"title":{"text":"<b> Pollutant Load Reductions from 2013-2020 in WLEB <\/b>","font":{"color":"rgba(112,111,111,1)","family":"","size":19.1282689912827},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,4.6],"tickmode":"array","ticktext":["Auglaize","St. Joseph","St. Marys","Upper Maumee"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["Auglaize","St. Joseph","St. Marys","Upper Maumee"],"nticks":null,"ticks":"outside","tickcolor":"rgba(218,218,218,1)","ticklen":3.98505603985056,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(112,111,111,1)","family":"","size":12.7521793275218},"tickangle":-0,"showline":true,"linecolor":"rgba(218,218,218,1)","linewidth":0.66417600664176,"showgrid":true,"gridcolor":"rgba(218,218,218,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Watershed","font":{"color":"rgba(112,111,111,1)","family":"","size":15.9402241594022}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-10731.9628566783,225371.219990244],"tickmode":"array","ticktext":["0","50000","100000","150000","200000"],"tickvals":[0,50000,100000,150000,200000],"categoryorder":"array","categoryarray":["0","50000","100000","150000","200000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(218,218,218,1)","ticklen":3.98505603985056,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(112,111,111,1)","family":"","size":12.7521793275218},"tickangle":-0,"showline":true,"linecolor":"rgba(218,218,218,1)","linewidth":0.66417600664176,"showgrid":true,"gridcolor":"rgba(218,218,218,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Load Reductions","font":{"color":"rgba(112,111,111,1)","family":"","size":15.9402241594022}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"rgba(255,255,255,1)","borderwidth":1.88976377952756,"font":{"color":"rgba(112,111,111,1)","family":"","size":12.7521793275218},"y":0.964566929133858},"annotations":[{"text":"Load Reduction Type","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(112,111,111,1)","family":"","size":15.9402241594022},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"bottom","legendTitle":true}],"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"2ba871b113c8":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"2ba871b113c8","visdat":{"2ba871b113c8":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f134286cda13feb15511" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f134286cda13feb15511">{"x":{"data":[{"orientation":"v","width":[0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182],"base":[0,0,0,0,0,0,0,0],"x":[2012.7,2013.7,2014.7,2015.7,2016.7,2017.7,2018.7,2019.7],"y":[1190,962,80205.6488162998,75185.0857460603,92643.598675545,102085.816074052,131120.025990555,110340.799866568],"text":["year: 2013<br />value:   1190.00<br />Load Reduction Type: Nitrogen Reduction (lbs.)","year: 2014<br />value:    962.00<br />Load Reduction Type: Nitrogen Reduction (lbs.)","year: 2015<br />value:  80205.65<br />Load Reduction Type: Nitrogen Reduction (lbs.)","year: 2016<br />value:  75185.09<br />Load Reduction Type: Nitrogen Reduction (lbs.)","year: 2017<br />value:  92643.60<br />Load Reduction Type: Nitrogen Reduction (lbs.)","year: 2018<br />value: 102085.82<br />Load Reduction Type: Nitrogen Reduction (lbs.)","year: 2019<br />value: 131120.03<br />Load Reduction Type: Nitrogen Reduction (lbs.)","year: 2020<br />value: 110340.80<br />Load Reduction Type: Nitrogen Reduction (lbs.)"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(101,173,194,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Nitrogen Reduction (lbs.)","legendgroup":"Nitrogen Reduction (lbs.)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182],"base":[0,0,0,0,0,0,0,0],"x":[2013,2014,2015,2016,2017,2018,2019,2020],"y":[1270,1317,39164.1982664389,36655.3611968262,45381.7665678367,50137.9639765673,64696.327634282,54275.5549487827],"text":["year: 2013<br />value:   1270.00<br />Load Reduction Type: Phosphorus Reduction (lbs.)","year: 2014<br />value:   1317.00<br />Load Reduction Type: Phosphorus Reduction (lbs.)","year: 2015<br />value:  39164.20<br />Load Reduction Type: Phosphorus Reduction (lbs.)","year: 2016<br />value:  36655.36<br />Load Reduction Type: Phosphorus Reduction (lbs.)","year: 2017<br />value:  45381.77<br />Load Reduction Type: Phosphorus Reduction (lbs.)","year: 2018<br />value:  50137.96<br />Load Reduction Type: Phosphorus Reduction (lbs.)","year: 2019<br />value:  64696.33<br />Load Reduction Type: Phosphorus Reduction (lbs.)","year: 2020<br />value:  54275.55<br />Load Reduction Type: Phosphorus Reduction (lbs.)"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(35,59,67,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Phosphorus Reduction (lbs.)","legendgroup":"Phosphorus Reduction (lbs.)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182,0.300000000000182],"base":[0,0,0,0,0,0,0,0],"x":[2013.3,2014.3,2015.3,2016.3,2017.3,2018.3,2019.3,2020.3],"y":[1328,1088,32036.6272546098,29362.7277819721,36817.155776386,39111.2857504477,50895.764696072,42918.5896285729],"text":["year: 2013<br />value:   1328.00<br />Load Reduction Type: Sediment Reduction (tons)","year: 2014<br />value:   1088.00<br />Load Reduction Type: Sediment Reduction (tons)","year: 2015<br />value:  32036.63<br />Load Reduction Type: Sediment Reduction (tons)","year: 2016<br />value:  29362.73<br />Load Reduction Type: Sediment Reduction (tons)","year: 2017<br />value:  36817.16<br />Load Reduction Type: Sediment Reduction (tons)","year: 2018<br />value:  39111.29<br />Load Reduction Type: Sediment Reduction (tons)","year: 2019<br />value:  50895.76<br />Load Reduction Type: Sediment Reduction (tons)","year: 2020<br />value:  42918.59<br />Load Reduction Type: Sediment Reduction (tons)"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(232,70,70,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Sediment Reduction (tons)","legendgroup":"Sediment Reduction (tons)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":46.2864259028643,"r":7.97011207970112,"b":43.8356164383562,"l":59.7758405977584},"paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(112,111,111,1)","family":"","size":15.9402241594022},"title":{"text":"<b> Pollutant Load Reductions by Year in WLEB <\/b>","font":{"color":"rgba(112,111,111,1)","family":"","size":19.1282689912827},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2012.155,2020.845],"tickmode":"array","ticktext":["2014","2016","2018","2020"],"tickvals":[2014,2016,2018,2020],"categoryorder":"array","categoryarray":["2014","2016","2018","2020"],"nticks":null,"ticks":"outside","tickcolor":"rgba(218,218,218,1)","ticklen":3.98505603985056,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(112,111,111,1)","family":"","size":12.7521793275218},"tickangle":-0,"showline":true,"linecolor":"rgba(218,218,218,1)","linewidth":0.66417600664176,"showgrid":true,"gridcolor":"rgba(218,218,218,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"year","font":{"color":"rgba(112,111,111,1)","family":"","size":15.9402241594022}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-6556.00129952775,137676.027290083],"tickmode":"array","ticktext":["0e+00","5e+04","1e+05"],"tickvals":[-9.09494701772928e-13,50000,100000],"categoryorder":"array","categoryarray":["0e+00","5e+04","1e+05"],"nticks":null,"ticks":"outside","tickcolor":"rgba(218,218,218,1)","ticklen":3.98505603985056,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(112,111,111,1)","family":"","size":12.7521793275218},"tickangle":-0,"showline":true,"linecolor":"rgba(218,218,218,1)","linewidth":0.66417600664176,"showgrid":true,"gridcolor":"rgba(218,218,218,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Load Reductions","font":{"color":"rgba(112,111,111,1)","family":"","size":15.9402241594022}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"rgba(255,255,255,1)","borderwidth":1.88976377952756,"font":{"color":"rgba(112,111,111,1)","family":"","size":12.7521793275218},"y":0.964566929133858},"annotations":[{"text":"Load Reduction Type","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(112,111,111,1)","family":"","size":15.9402241594022},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"bottom","legendTitle":true}],"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"2ba8283e6f8a":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"2ba8283e6f8a","visdat":{"2ba8283e6f8a":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+
+<p style="text-align: center;">
+    <img src="west_lake_erie_basin.jpg" alt="WLEB Logo" style="width:150px;height:110px;" href="https://www.in.gov/isda/divisions/soil-conservation/western-lake-erie-basin/">
+</p>
+
+<p style="text-align: center;">Western Lake Erie Basin Domestic Action Plan Advisory Committee</p>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

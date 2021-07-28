@@ -1,0 +1,36 @@
+name: "Indiana's Commitment to Enhance Water Quality in the Great Lakes - Western Lake Erie Basin"                                
+navbar:
+  title: "Western Lake Erie Basin Domestic Action Plan"                            
+  type: default
+  left:
+  - text: Sections
+    menu:
+    - text: "Background"
+      href: index.html                    
+    - text: "Annex 4 DAP"
+      href: annex_4_dap.html  
+    - text: "Monitoring"
+      href: water_quality_monitoring.html  
+    - text: "Programs and Projects"
+      href: programs_and_projects.html  
+    - text: "Accomplishments"
+      href: accomplishments.html   
+  right:
+  - text: "Upcoming Events"
+    icon: fa-calendar
+    href: upcoming_events.html
+  - text: "Domestic Action Plan"
+    icon: fa-file-alt
+    href: https://www.in.gov/isda/files/Lake-Erie-Domestic-Action-Plan-Final.pdf
+  - text: "ISDA - WLEB Website"
+    icon: fa-seedling
+    href: https://www.in.gov/isda/divisions/soil-conservation/western-lake-erie-basin/
+  - text: "Contacts"
+    icon: fa-envelope-o
+    href: contacts.html
+output:
+  html_document:
+    includes:
+      after_body: footer.html
+    highlight: null
+    css: style.css

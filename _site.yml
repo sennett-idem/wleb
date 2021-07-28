@@ -30,7 +30,7 @@ navbar:
     href: contacts.html
 output:
   html_document:
+    css: style.css
     includes:
       after_body: footer.html
     highlight: null
-    css: style.css
